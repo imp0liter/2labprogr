@@ -1,0 +1,41 @@
+namespace _2lab_modul_ippol
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Лабораторная работа №2\n");
+            Random rand = new Random();
+            Console.WriteLine("Создается массив....");
+            int[] massive = new int[1000];
+            Console.WriteLine("Цикл заполняет массив от 0 до 10000 заполнен рандомными числами....");
+            for (int i = 0; i < 1000; i++) 
+            {
+                massive[i] = rand.Next(0, 10000);
+                Console.WriteLine(massive[i]);
+            }
+            Console.WriteLine("Готово.");
+            Console.ReadKey();
+            int R = massive[0];
+            Console.WriteLine("Минимальное число: ");
+            for (int i = 0; i < massive.Length; i++)//поиск минимального числа 
+            {
+                if (massive[i] < R) { R = massive[i]; }
+
+            }
+            Console.WriteLine(R);
+            Console.WriteLine("Условие: ");
+            Console.WriteLine("Нахождение чисел, кратных 21, по возможности являющихся произведением 2 чисел массива, \n");
+            Console.WriteLine("по заданию: если верно выводится R, если не верно выводится -1"); 
+            if ((R % 21 == 0) && (R == ((massive[new Random().Next(0, massive.Length)]) * (massive[new Random().Next(0, massive.Length)]))))
+            {
+                Console.WriteLine(R);
+            }
+            else
+            {
+                Console.WriteLine("-1");
+            }
+            Console.ReadKey();
+        }
+    }
+}
