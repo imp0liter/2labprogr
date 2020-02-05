@@ -13,16 +13,19 @@ namespace _2lab_modul_ippol
             {
                 massive[i] = rand.Next(0, 10000);
                 Console.WriteLine(massive[i]);
-            }
+              }
             Console.WriteLine("Готово.");
             Console.ReadKey();
             int R = massive[0];
             Console.WriteLine("Минимальное число: ");
             for (int i = 0; i < massive.Length; i++)//поиск минимального числа 
             {
-                if (massive[i] < R) { R = massive[i]; }
+                if (massive[i] < R)
+				 {
+				    R = massive[i]; 
+					}
 
-            }
+              }
             Console.WriteLine(R);
             Console.WriteLine("Условие: ");
             Console.WriteLine("Нахождение чисел, кратных 21, по возможности являющихся произведением 2 чисел массива, \n");
@@ -30,12 +33,12 @@ namespace _2lab_modul_ippol
             if ((R % 21 == 0) && (R == ((massive[new Random().Next(0, massive.Length)]) * (massive[new Random().Next(0, massive.Length)]))))
             {
                 Console.WriteLine(R);
-            }
-            else
-            {
-                Console.WriteLine("-1");
-            }
+              }
+            	else
+              	{
+                 Console.WriteLine("-1");
+            	  }
             Console.ReadKey();
-        }
-    }
+          }
+     }
 }
