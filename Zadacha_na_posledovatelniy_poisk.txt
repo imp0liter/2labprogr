@@ -1,0 +1,40 @@
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Laboratornaya rabota ¹2\n");
+            Console.WriteLine("Sozdayotsya massive....");
+            int[] massive = new int[1000];
+            Random rand = new Random();
+            Console.WriteLine("Cikle massiva ot 0 do 10000 zapolnen randomnimi chislami....");
+            for (int i = 0; i < 1000; i++)
+            {
+                massive[i] = rand.Next(0, 1000);
+            }
+            Console.WriteLine("Ready.");
+            Console.ReadKey();
+            int R = massive[0];
+            Console.WriteLine("Minimalnoe chislo: ");
+            for (int i = 0; i < massive.Length; i++)//poisk minimalnogo chisla  
+            {
+                if (massive[i] < R)
+                {
+                    R = massive[i];
+                }
+
+            }
+            Console.WriteLine(R);
+            //progonyaem programmu po usloviyou
+            if ((R % 21 == 0) && (R == ((massive[new Random().Next(0, massive.Length)]) * (massive[new Random().Next(0, massive.Length)]))))
+            {
+                Console.WriteLine(R);
+            }
+            else
+            {
+                Console.WriteLine("-1");
+            }
+            Console.ReadKey();
+        }
+    }
+}
